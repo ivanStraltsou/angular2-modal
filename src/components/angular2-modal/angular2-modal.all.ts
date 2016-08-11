@@ -1,17 +1,17 @@
 import {Provider} from '@angular/core';
-import {ModalRenderer} from './models/tokens';
-import { DOMModalRenderer, Modal } from './providers';
+import {OverlayRenderer} from './models/tokens';
+import { DOMOverlayRenderer, Modal } from './providers';
 
 export * from './framework/fluent-assign';
 export * from './models/tokens';
 export * from './models/dialog-ref';
 export * from './models/modal-context';
 export * from './models/modal-open-context';
-export { DOMModalRenderer, Modal } from './providers';
+export { DOMOverlayRenderer, Modal } from './providers';
 
 export const MODAL_PROVIDERS: any[] = [
     new Provider(Modal, {useClass: Modal}),
-    new Provider(ModalRenderer, {useClass: DOMModalRenderer})
+    new Provider(OverlayRenderer, {useClass: DOMOverlayRenderer})
 ];
 
 import * as bootstrap from './plugins/bootstrap/index';

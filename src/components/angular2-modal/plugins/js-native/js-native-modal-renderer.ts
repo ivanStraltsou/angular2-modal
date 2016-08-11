@@ -6,11 +6,11 @@ import {
 } from '@angular/core';
 
 import { DialogRef } from '../../models/dialog-ref';
-import { ModalRenderer, DROP_IN_TYPE } from '../../models/tokens';
+import { OverlayRenderer, DROP_IN_TYPE } from '../../models/tokens';
 import { JSNativeModalContext } from './modal-context';
 
 @Injectable()
-export class JSNativeModalRenderer implements ModalRenderer {
+export class JSNativeModalRenderer implements OverlayRenderer {
 
     render(type: Type,
            viewContainer: ViewContainerRef,

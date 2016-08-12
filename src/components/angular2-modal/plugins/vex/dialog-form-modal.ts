@@ -12,7 +12,7 @@ import {
 
 import { createComponent } from '../../../../components/angular2-modal';
 
-import { ModalComponent, ModalCompileConfig } from '../../models/tokens';
+import { ModalComponent } from '../../models/tokens';
 import { DialogRef } from '../../models/dialog-ref';
 import { DialogPreset } from './presets/dialog-preset';
 import { DropInPreset } from './presets/dropin-preset';
@@ -85,7 +85,6 @@ export class DialogFormModal implements AfterViewInit, ModalComponent<DialogPres
   @ViewChild('modalDialog', {read: ViewContainerRef}) private _viewContainer: ViewContainerRef;
 
   constructor(public dialog: DialogRef<DialogPreset>,
-              private _compileConfig: ModalCompileConfig,
               private _cr: ComponentFactoryResolver) {
     this.context = dialog.context;
   }
@@ -98,11 +97,12 @@ export class DialogFormModal implements AfterViewInit, ModalComponent<DialogPres
      Find out the error and remove setTimeout.
      */
     setTimeout( () => {
-        this.dialog.contentRef = createComponent(
+        createComponent(
           this._cr,
           this.context.content,
           this._viewContainer,
-          this._compileConfig.bindings);
+          []
+        );
     });
   }
 
@@ -114,15 +114,20 @@ export class DialogFormModal implements AfterViewInit, ModalComponent<DialogPres
 @Component({
   selector: 'drop-in-dialog',
   encapsulation: ViewEncapsulation.None,
-  template: `<div class="vex-dialog-message">{{context.message}}</div>
-    <div *ngIf="context.showInput" class="vex-dialog-input">
-        <input autofocus #input
-               name="vex" 
-               type="text" 
-               class="vex-dialog-prompt-input"
-               (change)="context.defaultResult = input.value"               
-               placeholder="{{context.placeholder}}">
-    </div>`
+  template:
+`<div class="vex-dialog-message">{{context.message}}</div>
+ <div *ngIf="context.showInput" class="vex-dialog-input">
+   <input #input
+          autofocus
+          name="vex" 
+          type="text" 
+          class="vex-dialog-prompt-input"
+           (change)="context.defaultResult = input.value" 
+          placeholder="{{context.placeholder}}">
+ </div>
+ <div *ngIf="context.showCloseButton" 
+      [class]="context.closeClassName"
+      (click)="dialog.dismiss()"></div>`
 })
 export class FormDropIn implements ModalComponent<DropInPreset> {
   private context: DropInPreset;

@@ -1,15 +1,12 @@
 import { Component } from '@angular/core';
-import { NgTemplateOutlet } from '@angular/common';
 
 import { DialogRef } from '../../../../components/angular2-modal';
-import { Modal } from './modal';
 import { InAppModalContext } from './modal-context';
 
 
 @Component({
-    selector: 'modal-backdrop',
-    directives: [ NgTemplateOutlet ],
-    styles: [`
+  selector: 'modal-backdrop',
+  styles: [`
 .in-app-modal-backdrop {
     
     width: 100%;
@@ -50,9 +47,8 @@ article .content {
     padding: 8px;
     background: rgba(255, 255, 255, 0.66);
 }`
-    ],
-    template:
-`<div class="in-app-modal-backdrop">
+  ],
+  template: `<div class="in-app-modal-backdrop">
     <article>
         <div class="title">
             <span>{{dialog.context.title}}</span>
@@ -64,9 +60,6 @@ article .content {
 </div>`
 })
 export class InAppModalBackdrop {
-
-    constructor(
-        private dialog: DialogRef<InAppModalContext>,
-        private _modal: Modal) {
-    }
+  constructor(private dialog: DialogRef<InAppModalContext>) {
+  }
 }

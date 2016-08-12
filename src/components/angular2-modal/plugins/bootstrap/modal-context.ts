@@ -46,7 +46,9 @@ export class BSModalContext extends ModalOpenContext {
     }
 }
 
-
+interface Class<T> {
+    new(): T;
+}
 export class BSModalContextBuilder<T extends BSModalContext> extends ModalOpenContextBuilder<T> {
     /**
      * Size of the modal.
@@ -70,7 +72,7 @@ export class BSModalContextBuilder<T extends BSModalContext> extends ModalOpenCo
     constructor(
         defaultValues: T = undefined,
         initialSetters: string[] = undefined,
-        baseType: new () => T = undefined
+        baseType: any = undefined
     ) {
         super(
             extend<any>(DEFAULT_VALUES, defaultValues || {}),

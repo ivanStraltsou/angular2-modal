@@ -44,7 +44,7 @@ Click [HERE](https://github.com/shlomiassaf/angular2-modal/tree/master/QUICKTHRO
 Click for the [Demo](http://shlomiassaf.github.io/angular2-modal/) Make sure to check the [code generator!](http://shlomiassaf.github.io/angular2-modal#/bootstrap-demo/customizeModals)  
 
 ## Plunker
-Use [this plunker](http://plnkr.co/edit/iiQett?p=preview) for quick showcasing and issue reports.
+Use [this plunker](http://plnkr.co/edit/7c0pGE?p=preview) for quick showcasing and issue reports.
 
 
 ## Sample code: Custom Modal dialog

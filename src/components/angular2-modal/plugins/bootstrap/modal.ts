@@ -13,7 +13,7 @@ import {
   CSSBackdrop,
   CSSDialogContainer,
   PromiseCompleter
-} from '../../../angular2-modal';
+} from '../../../../components/angular2-modal';
 
 import { BSModalContainer } from './modal-container.component';
 

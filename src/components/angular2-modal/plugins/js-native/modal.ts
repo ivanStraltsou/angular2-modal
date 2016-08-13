@@ -1,6 +1,13 @@
 import { Injectable,   ResolvedReflectiveProvider as RRP } from '@angular/core';
 
-import { DialogRef, Maybe, Overlay, DROP_IN_TYPE, Modal as Modal_ } from '../../../angular2-modal';
+import {
+  DialogRef,
+  Maybe,
+  Overlay,
+  DROP_IN_TYPE,
+  Modal as Modal_
+} from '../../../../components/angular2-modal';
+
 import { JSNativePresetBuilder } from './presets/js-native-preset';
 
 @Injectable()

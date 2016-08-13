@@ -1,9 +1,6 @@
-import {
-  Injectable,
-  ResolvedReflectiveProvider as RRP
-} from '@angular/core';
-
 import 'rxjs/add/operator/first';
+
+import { Injectable, ResolvedReflectiveProvider as RRP } from '@angular/core';
 
 import {
   Maybe,
@@ -14,7 +11,7 @@ import {
   CSSBackdrop,
   CSSDialogContainer,
   PromiseCompleter
-} from '../../../angular2-modal';
+} from '../../../../components/angular2-modal';
 
 import { DropInPresetBuilder } from './presets/dropin-preset';
 

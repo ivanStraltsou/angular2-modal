@@ -47,10 +47,8 @@ Click for the [Demo](http://shlomiassaf.github.io/angular2-modal/) Make sure to 
 Use [this plunker](http://plnkr.co/edit/iiQett?p=preview) for quick showcasing and issue reports.
 
 
-## Sample code: Custom Modal dialog
-http://embed.plnkr.co/7c0pGE/
-
-http://embed.plnkr.co/hwbmF9/   (version 1.1.1)
+## Sample code: Custom plugin that accepts TemplateRef as dialogs.
+http://plnkr.co/edit/9HYPPK?p=preview
 
 
 ![Code Generator!](/preview.png)
@@ -66,61 +64,6 @@ See [src/demo](https://github.com/shlomiassaf/angular2-modal/tree/master/src/dem
 Demo application is built with `Webpack` and `SystemJS`.   
 The only difference is the `index.html` file.  
 The deployed demo site is in `SystemJS`, development is done with `Webpack`
-
-In src/system.config.ts, add the property
-```
-  'angular2-modal': 'vendor/angular2-modal',
-```
-to one of the System.config() arguments.
-
-Optionally, you may call System.config() with an object of the form:
-```
-  {
-    'packages': {
-      angular2-modal': { ... main: 'index.js', ... },
-      ...
-    },
-    ...
-  };
-```
-.
-
-
-## Angular-cli   
- 
-In ./angular-cli.build.js, and an entry for 'angular2-modal', as in:
-```
-module.exports = function(defaults) {
-  return new Angular2App(defaults, {
-    vendorNpmFiles: [
-      [ ... other file globs ...],
-      'angular2-modal/**/*.+(ts|js|js.map)',
-    ]
-  });
-```
-
-In src/system.config.ts,
-you will satisfy the first requirement in the [SystemJS](#systemjs) section
-by adding the property *angular2-modal* to the *map* array near the beginning of the file, as in:
-```
-/** Map relative paths to URLs. */
-  const map: any = {
-    'angular2-modal': 'vendor/angular2-modal',
-    ...
-  };
-```
-
-You may configure the *packages* property from [SystemJS](#systemjs)
-by adding the 'angular2-modal' property the *packages* array
-near the beginning of system.config.ts as in:
-```
-  const packages: any = {
-    'angular2-modal': {
-      main: 'index.js',
-      ...
-    }
-  }
-```
 
 ## Plugins
 Plugins serve as a concrete UI implementation for a modal. It can be an implementation for a known library (e.g: bootstrap) or something unique.  

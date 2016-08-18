@@ -3,7 +3,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return (c > 3 && r && Object.defineProperty(target, key, r), r);
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
@@ -17,13 +17,13 @@ var modal_container_1 = require('./modal-container');
 var modal_footer_1 = require('./modal-footer');
 var one_button_preset_1 = require('./presets/one-button-preset');
 var two_button_preset_1 = require('./presets/two-button-preset');
-var angular2_modal_1 = require("angular2-modal");
+var index_1 = require('../../index');
 function getProviders() {
     return [
-        { provide: angular2_modal_1.Modal, useClass: modal_1.Modal },
+        { provide: index_1.Modal, useClass: modal_1.Modal },
         { provide: modal_1.Modal, useClass: modal_1.Modal },
-        { provide: angular2_modal_1.ModalBackdropComponent, useValue: modal_backdrop_1.BSModalBackdrop },
-        { provide: angular2_modal_1.ModalDropInFactory, useValue: {
+        { provide: index_1.ModalBackdropComponent, useValue: modal_backdrop_1.BSModalBackdrop },
+        { provide: index_1.ModalDropInFactory, useValue: {
                 alert: function (modal) { return new one_button_preset_1.OneButtonPresetBuilder(modal, { isBlocking: false }); },
                 prompt: function (modal) { return new one_button_preset_1.OneButtonPresetBuilder(modal, { isBlocking: true, keyboard: null }); },
                 confirm: function (modal) { return new two_button_preset_1.TwoButtonPresetBuilder(modal, { isBlocking: true, keyboard: null }); }
@@ -56,4 +56,4 @@ var BootstrapModalModule = (function () {
     return BootstrapModalModule;
 }());
 exports.BootstrapModalModule = BootstrapModalModule;
-//# sourceMappingURL=bootstrap.module.js.map
+//# sourceMappingURL=C:/_all/_bin/repo/kronos/migration/angular2-modal/src/components/angular2-modal/plugins/bootstrap/bootstrap.module.js.map
